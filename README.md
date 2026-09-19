@@ -39,7 +39,7 @@ Hi, I'm **Kashyap**, a Computer Engineering student who builds **AI-powered prod
 
 ## stack
 
-<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind,nodejs,express,python,fastapi,firebase,vercel,git,github,vscode&perline=8" alt="Technology stack">
+<img src="https://skillicons.dev/icons?i=html,css,js,react,python,firebase,vercel,git,github,vscode&perline=8" alt="Technology stack">
 
 </div>
 
