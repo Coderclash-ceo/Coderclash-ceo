@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="168" viewBox="0 0 700 168">
+<defs><clipPath id="r"><rect x="40" y="88" width="620" height="8" rx="4"/></clipPath></defs>
+<rect x=".5" y=".5" width="699" height="167" rx="10" fill="#0D1117" stroke="#30363D"/>
+<text x="40" y="44" font-family="'Segoe UI',Arial,sans-serif" font-size="16" font-weight="600" fill="#58A6FF">1 Languages</text>
+<text x="350" y="72" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="13" fill="#58A6FF">Most used languages</text>
+<g clip-path="url(#r)"><rect x="40.0" y="88" width="620.0" height="8" fill="#3178C6"/></g><circle cx="45" cy="128" r="5" fill="#3178C6"/><text x="58" y="132" font-family="'Segoe UI',Arial,sans-serif" font-size="13" fill="#E6EDF3">JavaScript</text><text x="250" y="132" text-anchor="end" font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#8B949E">0 kB</text><text x="315" y="132" text-anchor="end" font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#8B949E">100.0%</text>
+</svg>

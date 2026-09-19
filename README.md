@@ -1,174 +1,97 @@
 <div align="center">
 
-<!-- ========================= -->
-
-<!--        HERO BANNER        -->
-
-<!-- ========================= -->
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-  <img src="assets/banner-dark.svg" width="100%" alt="Kashyap Makwana developer profile banner">
+  <img src="assets/banner-dark.svg" width="100%" alt="Kashyap Makwana - profile terminal">
 </picture>
 
-<br>
-
-<!-- ========================= -->
-
-<!--      TYPING HEADLINE      -->
-
-<!-- ========================= -->
-
 <a href="https://github.com/Coderclash-ceo">
-  <img
-    src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=AA9BEF&center=true&vCenter=true&width=900&lines=Kashyap+Makwana+%E2%80%94+Developer;Web+Development+%7C+AI+%7C+Agent+Systems;Computer+Engineering+Student;Building%2C+Learning%2C+Shipping"
-    alt="Typing introduction"
-  >
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=AA9BEF&center=true&vCenter=true&width=700&height=50&lines=Kashyap;AI+%2B+Agents+%2B+Web+Apps;Build+%7C+Learn+%7C+Ship" alt="Typing intro">
 </a>
 
 <br>
 
-<!-- ========================= -->
-
-<!--          SOCIALS          -->
-
-<!-- ========================= -->
-
-<a href="https://github.com/Coderclash-ceo">
-  <img src="https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=AA9BEF" alt="GitHub">
-</a>
-&nbsp;&nbsp;
-
-<!-- Add your LinkedIn when ready -->
-
-<!--
-<a href="YOUR_LINKEDIN_URL">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
-&nbsp;&nbsp;
--->
-
-<!-- Add your Instagram when ready -->
-
-<!--
-<a href="YOUR_INSTAGRAM_URL">
-  <img src="https://img.shields.io/badge/Instagram-0d1117?style=for-the-badge&logo=instagram&logoColor=AA9BEF" alt="Instagram">
-</a>
-&nbsp;&nbsp;
--->
+<a href="https://github.com/Coderclash-ceo"><img src="https://img.shields.io/badge/GITHUB-Coderclash--ceo-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+<a href="https://github.com/Coderclash-ceo?tab=repositories"><img src="https://img.shields.io/badge/PROJECTS-0d1117?style=for-the-badge&logo=githubactions&logoColor=AA9BEF" alt="Projects"></a>
 
 <br><br>
 
-<img
-src="https://komarev.com/ghpvc/?username=Coderclash-ceo&style=flat&color=AA9BEF&label=profile+views"
-alt="Profile views"
-
->
+<img src="https://komarev.com/ghpvc/?username=Coderclash-ceo&style=flat&color=AA9BEF&label=profile+views" alt="Profile views">
 
 </div>
 
 ---
 
-# 👋 This is me
+## This is me :)
 
-Hi, I'm **Kashyap**, a Computer Engineering student and developer interested in building useful products with **web technologies, AI, and agent-based systems**.
+Hi, I'm **Kashyap**, a Computer Engineering student who builds **AI-powered products** end to end: React frontends, FastAPI/Node backends, and LLM agents that actually do things.
 
-I enjoy turning ideas into working projects — from frontend interfaces to AI-powered systems — and I'm currently focused on improving my development skills by **building real things and shipping consistently**.
-
-* 🎓 **Computer Engineering Student**
-* 💻 Focused on **Web Development & Frontend**
-* 🤖 Exploring **AI, Agents & intelligent applications**
-* 🚀 Building products instead of only following tutorials
-* 🧠 Currently deepening my knowledge of **JavaScript, React and modern web development**
-* 🛠️ Interested in turning ideas into real-world applications
-* 🌱 Always learning, building and experimenting
+- 🥗 Built **NutriLink**, an AI nutrition & health assistant, deployed live on Vercel + Render
+- 🤖 **Agent Developer** on **NudgeOS**, a multi-agent AI receptionist for WhatsApp/Instagram
+- 🗓️ Designing a **Smart Appointment Queue Management System** with a weighted priority queue
+- ⚛️ Daily driver: **React + TypeScript + Tailwind**, with **Gemini** and **Firestore** on the AI side
+- 🌱 Learning by shipping: every project goes live, not just to `localhost`
 
 ---
 
 <div align="center">
 
-## ⚡ My Stack
+## stack
 
-<br>
-
-<img
-src="https://skillicons.dev/icons?i=html,css,js,react,nodejs,python,java,c,git,github,vscode,firebase&perline=6"
-alt="Technology stack"
-
->
+<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind,nodejs,express,python,fastapi,firebase,vercel,git,github,vscode&perline=8" alt="Technology stack">
 
 </div>
 
 ---
 
-<div align="center">
+## projects
 
-## 🚀 What I'm Building
+### 🥗 NutriLink — AI Nutrition & Health Assistant 
 
-</div>
+An AI-powered nutrition and health assistant with **food analysis, personalized coaching, and chat/voice interaction**.
 
-### 🧠 NudgeOS
+- **Stack:** React · TypeScript · Tailwind · FastAPI · Google Gemini API · Firestore
+- Accurate food-analysis outputs across multiple tested food items, with **API response times under 15 seconds**
+- **Deployed independently:** frontend on Vercel, backend live on Render
 
-A multi-agent AI project focused on building an intelligent system using multiple specialized agents.
+ [Live demo](https://nutri-link-2-0.vercel.app/)
 
-**Role:** AI / Agent Development
+### 🧠 NudgeOS — AI Receptionist for WhatsApp & Instagram
 
-**Tech:** JavaScript • AI Agents • APIs • Cloud
+Capstone team project: a SaaS platform built around **five coordinated AI agents**. I'm the **Agent Developer**, owning the agent layer and the shared LLM service.
 
-🔗 [View NudgeOS](https://github.com/Coderclash-ceo/Nudge_OS_github)
+- **Stack:** JavaScript · Node · Firestore · Gemini Api
 
----
+### 🗓️ Smart Appointment Queue Management System `In progress`
 
-### 🏥 Clinic Management System
+Full-stack platform where customers book appointments or join a digital queue, and providers manage counters and live queue status from an admin dashboard.
 
-A web-based clinic management system I'm currently designing and building to improve my understanding of **frontend development, UI/UX and application architecture**.
-
-**Focus:** Frontend • UI/UX • Web Development
-
-**Status:** 🚧 In development
-
----
-
-### 🚀 FunnelPilot
-
-A product idea focused on helping local businesses such as salons, gyms, dentists and coaches improve their customer acquisition and follow-up processes.
-
-**Focus:** SaaS • Automation • AI • Business
-
-**Status:** 💡 Building / experimenting
+- **Stack:** Node.js · Express · Firestore · HTML/CSS/JS
+- Unified **weighted priority queue** (walk-ins + appointments) with **aging** so nobody waits forever
 
 ---
 
 <div align="center">
 
-## 📊 Signals
-
-<br>
+## signals
 
 <table>
 <tr>
-
 <td width="50%" align="center" valign="middle">
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/radar-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/radar-light.svg">
-  <img src="assets/radar-dark.svg" width="400" alt="Development skills radar">
+  <img src="assets/radar-dark.svg" width="400" alt="Skill radar">
 </picture>
-
 </td>
-
 <td width="50%" align="center" valign="middle">
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/radar-langs-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/radar-langs-light.svg">
-  <img src="assets/radar-langs-dark.svg" width="400" alt="Programming language radar">
+  <img src="assets/radar-langs-dark.svg" width="400" alt="Language and stack radar">
 </picture>
-
 </td>
-
 </tr>
 </table>
 
@@ -178,24 +101,21 @@ A product idea focused on helping local businesses such as salons, gyms, dentist
 
 <div align="center">
 
-## 📈 Numbers Matter? Ohhh Yes.
-
-<br>
+## Numbers matter? ohhh yes.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
-  <img src="assets/stats-dark.svg" width="480" alt="GitHub statistics">
+  <img src="assets/stats-dark.svg" width="560" alt="GitHub statistics">
 </picture>
 
-<br><br>
+<br>
 
-<img
-src="assets/languages.svg"
-height="165"
-alt="Most used programming languages"
-
->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/languages-light.svg">
+  <img src="assets/languages-dark.svg" width="560" alt="Most used languages">
+</picture>
 
 </div>
 
@@ -203,65 +123,6 @@ alt="Most used programming languages"
 
 <div align="center">
 
-## 🧩 Currently Learning
-
-```text
-HTML / CSS
-     ↓
-JavaScript
-     ↓
-React
-     ↓
-APIs & Backend
-     ↓
-AI Integrations
-     ↓
-AI Agents
-     ↓
-Build → Ship → Improve
-```
-
-</div>
-
----
-
-## 🎯 Current Focus
-
-```text
-┌──────────────────────────────────────────────┐
-│                                              │
-│  💻 Become stronger at modern web development│
-│  ⚛️  Master React                            │
-│  🤖 Build practical AI applications         │
-│  🧠 Understand agent-based systems          │
-│  🚀 Build and ship real products             │
-│  📚 Keep improving through projects         │
-│                                              │
-└──────────────────────────────────────────────┘
-```
-
----
-
-<div align="center">
-
-## 🤝 Let's Connect
-
-If you're interested in **web development, AI, agents, startups or building projects**, feel free to connect.
-
-<br>
-
-<a href="https://github.com/Coderclash-ceo">
-  <img src="https://img.shields.io/badge/GitHub-Coderclash--ceo-0d1117?style=for-the-badge&logo=github&logoColor=AA9BEF">
-</a>
-
-<!-- Add LinkedIn / Instagram / X here later -->
-
-<br><br>
-
-### `Build. Learn. Ship. Repeat.`
-
-<br>
-
-<sub>Built with curiosity & ☕ by Kashyap Makwana</sub>
+<sub><code>Build with love · @Coderclash-ceo</code></sub>
 
 </div>

@@ -1,0 +1,32 @@
+{
+  "handle": "kashyap@coderclash",
+  "github": "Coderclash-ceo",
+  "monogram": "KM",
+  "portrait": "assets/portrait.jpg",
+  "timezone_label": "UTC+5:30 · INDIA NODE",
+  "info": [
+    ["Subject", "Kashyap Makwana"],
+    ["Role", "Computer Engineering Student · AI Agent Dev"],
+    ["Origin", "India"],
+    ["Education", "Computer Engineering · SVKM's SBMP"],
+    ["Status", "Building + Learning + Shipping"],
+    ["ToolChain", "VS Code · Git · GitHub"],
+    ["Core.Lang", " JavaScript · Python"],
+    ["Core.Frontend", "React"],
+    ["Core.Backend", "FastAPI · Node"],
+    ["Core.Database", "Firestore"],
+    ["Core.AI", "Gemini API"],
+    ["Core.Infra", "Vercel · Render"],
+    ["Grid.GitHub", "Coderclash-ceo"]
+  ],
+  "dev_signals": {
+    "title": "Skill Radar",
+    "labels": ["Frontend", "TypeScript / JS", "AI Integration", "AI Agents", "Backend", "Deployment"],
+    "values": [75, 70, 68, 62, 60, 55]
+  },
+  "lang_signals": {
+    "title": "Language & Stack",
+    "labels": ["JavaScript", "TypeScript", "Python", "HTML / CSS", "Java"],
+    "values": [72, 65, 62, 80, 50, 45]
+  }
+}
