@@ -13,7 +13,7 @@ import json
 import math
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
@@ -28,12 +28,12 @@ THEMES = {
 }
 PURPLE = "#AA9BEF"
 
-COLS, ROWS, STEP = 85, 117, 4  # dot grid -> 340 x 468 px area
+COLS, ROWS, STEP = 113, 156, 3  # dot grid -> 339 x 468 px area
 
 CSS = """
 .m{font-family:'JetBrains Mono','SFMono-Regular',Consolas,'Liberation Mono',monospace}
-.l{opacity:0;animation:fade .5s ease forwards}
-@keyframes fade{to{opacity:1}}
+.l{animation:fade .5s ease backwards}
+@keyframes fade{from{opacity:0}}
 .pulse{animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.2}}
 """
@@ -64,14 +64,85 @@ def _monogram(text):
 
 
 def _photo(path):
-    im = Image.open(path).convert("L")
-    im = ImageOps.fit(im, (COLS, ROWS), centering=(0.5, 0.35))
-    return ImageOps.autocontrast(im, cutoff=2)
+    """Photo -> tone-mapped grayscale sized to the dot grid.
+    Optional config block "photo": {zoom, center_x, center_y, invert (auto/true/false), gamma}
+    """
+    o = CFG.get("photo", {})
+    zoom = max(1.0, float(o.get("zoom", 1.0)))
+    fx, fy = float(o.get("center_x", 0.5)), float(o.get("center_y", 0.42))
+    im = ImageOps.exif_transpose(Image.open(path)).convert("L")
+    w, h = im.size
+    ar = COLS / ROWS
+    if w / h > ar:
+        ch = h / zoom
+        cw = ch * ar
+    else:
+        cw = w / zoom
+        ch = cw / ar
+    cx = min(max(w * fx, cw / 2), w - cw / 2)
+    cy = min(max(h * fy, ch / 2), h - ch / 2)
+    im = im.crop((int(cx - cw / 2), int(cy - ch / 2), int(cx + cw / 2), int(cy + ch / 2)))
+    im = im.resize((COLS, ROWS), Image.LANCZOS)
+    # bright background -> invert so the background stays empty
+    edge = [im.getpixel((x, y)) for x in range(COLS) for y in (0, 1, 2, ROWS - 1)]
+    edge += [im.getpixel((x, y)) for y in range(ROWS) for x in (0, 1, COLS - 1)]
+    inv = o.get("invert", "auto")
+    if inv == "auto":
+        inv = sum(edge) / len(edge) > 130
+    im = ImageOps.autocontrast(im, cutoff=1)
+    im = Image.blend(im, ImageOps.equalize(im), 0.45)
+    g = float(o.get("gamma", 1.0))
+    if g != 1.0:
+        im = im.point(lambda v: int(255 * (v / 255) ** g))
+    im = im.filter(ImageFilter.UnsharpMask(radius=1.6, percent=170, threshold=2))
+    # flatten everything close to the background tone so the background stays clean
+    edge2 = sorted(im.getpixel((x, y)) for x in range(COLS) for y in (0, 1, 2, ROWS - 1))
+    bgv = edge2[len(edge2) // 2]
+    tol = int(o.get("bg_tolerance", 28))
+    im = im.point(lambda v: bgv if abs(v - bgv) < tol else v)
+    if inv:
+        im = ImageOps.invert(im)
+    floor = int(o.get("floor", 45))  # crush near-black -> clean, empty background
+    bg_after = 255 - bgv if inv else bgv
+    if bg_after < 128:
+        floor = max(floor, bg_after + 4)
+    im = im.point(lambda v: 0 if v < floor else min(255, int((v - floor) * 255 / (255 - floor))))
+    return im
+
+
+MODE = "1-BIT"
 
 
 def dot_path():
-    photo = ROOT / CFG.get("portrait", "assets/portrait.jpg")
-    base = _photo(photo) if photo.exists() else _monogram(CFG.get("monogram", "KM"))
+    global COLS, ROWS, STEP, MODE
+    photo = None
+    for ext in ("jpg", "jpeg", "png", "webp", "jpg.jpg", "jpeg.jpg", "png.png", "jpg.png"):
+        cand = ASSETS / f"portrait.{ext}"
+        if cand.exists():
+            photo = cand
+            break
+    if photo:
+        print("Using photo:", photo)
+        style = CFG.get("photo", {}).get("style", "halftone")
+        if style == "halftone":
+            COLS, ROWS, STEP, MODE = 68, 94, 5, "HALFTONE"
+        base = _photo(photo)
+        if style == "halftone":
+            # variable-size dots: tone is kept, so the face stays readable when GitHub scales the banner down
+            d, n = [], 0
+            for y in range(ROWS):
+                for x in range(COLS):
+                    v = base.getpixel((x, y)) / 255
+                    if v < 0.07:
+                        continue
+                    r = round((0.55 + 1.85 * v) * 5) / 5
+                    cx, cy = x * STEP + STEP / 2, y * STEP + STEP / 2
+                    d.append("M%.1f %.1fa%.1f %.1f 0 1 0 %.1f 0a%.1f %.1f 0 1 0 -%.1f 0" % (cx - r, cy, r, r, 2 * r, r, r, 2 * r))
+                    n += 1
+            return "".join(d), n
+    else:
+        print("No photo found in", ASSETS, "-> using monogram. Files there:", sorted(x.name for x in ASSETS.iterdir()))
+        base = _monogram(CFG.get("monogram", "KM"))
     bits = base.convert("1")  # Floyd-Steinberg dither -> 1-bit
     d, n = [], 0
     for y in range(ROWS):
@@ -119,13 +190,13 @@ def banner(theme, dots, count):
 
 <rect x="24" y="64" width="380" height="560" rx="8" fill="{t['panel']}" stroke="{t['border']}"/>
 <text x="44" y="92" class="m" font-size="13" font-weight="700" fill="{t['cyan']}">VISUAL.MAP</text>
-<text x="384" y="92" text-anchor="end" class="m" font-size="11" fill="{t['muted']}">{COLS * STEP}×{ROWS * STEP} / 1-BIT</text>
+<text x="384" y="92" text-anchor="end" class="m" font-size="11" fill="{t['muted']}">{COLS * STEP}×{ROWS * STEP} / {MODE}</text>
 <line x1="24" y1="104" x2="404" y2="104" stroke="{t['border']}"/>
 <g transform="translate({ox} {oy})"><path d="{dots}" fill="{t['dot']}" fill-opacity=".9"/></g>
 {brackets}
 <g clip-path="url(#dotclip)"><rect x="{ox}" y="{oy}" width="{COLS * STEP}" height="2" fill="{t['cyan']}" fill-opacity=".55">
 <animate attributeName="y" values="{oy};{oy + ROWS * STEP};{oy}" dur="6s" repeatCount="indefinite"/></rect></g>
-<text x="44" y="612" class="m" font-size="10" fill="{t['muted']}">PTS {count} · FS/SERPENTINE</text>
+<text x="44" y="612" class="m" font-size="10" fill="{t['muted']}">PTS {count} · {'HALFTONE' if MODE == 'HALFTONE' else 'FS/SERPENTINE'}</text>
 
 <rect x="420" y="64" width="756" height="560" rx="8" fill="{t['panel']}" stroke="{t['border']}"/>
 <text x="444" y="92" class="m" font-size="13" font-weight="700" fill="{t['cyan']}">SYSTEM.INFO</text>
@@ -166,7 +237,7 @@ def radar(title, labels, vals, theme):
         texts.append(f'<text x="{tx:.1f}" y="{ty:.1f}" text-anchor="{anchor}" dominant-baseline="middle" '
                      f'font-family="Arial,sans-serif" font-size="13" fill="{t["muted"]}">{label}</text>')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="520" height="500" viewBox="0 0 520 500">
-<style>.f{{opacity:0;animation:f 1.2s .3s ease forwards}}@keyframes f{{to{{opacity:1}}}}</style>
+<style>.f{{animation:f 1.2s .3s ease backwards}}@keyframes f{{from{{opacity:0}}}}</style>
 <rect width="520" height="500" fill="{t['card']}"/>
 <text x="260" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="{t['text']}">{title}</text>
 {rings}{"".join(axes)}

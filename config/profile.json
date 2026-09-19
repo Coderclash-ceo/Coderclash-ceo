@@ -5,28 +5,100 @@
   "portrait": "assets/portrait.jpg",
   "timezone_label": "UTC+5:30 · INDIA NODE",
   "info": [
-    ["Subject", "Kashyap Makwana"],
-    ["Role", "Computer Engineering Student · AI Agent Dev"],
-    ["Origin", "India"],
-    ["Education", "Computer Engineering · SVKM's SBMP"],
-    ["Status", "Building + Learning + Shipping"],
-    ["ToolChain", "VS Code · Git · GitHub"],
-    ["Core.Lang", " JavaScript · Python"],
-    ["Core.Frontend", "React"],
-    ["Core.Backend", "FastAPI · Node"],
-    ["Core.Database", "Firestore"],
-    ["Core.AI", "Gemini API"],
-    ["Core.Infra", "Vercel · Render"],
-    ["Grid.GitHub", "Coderclash-ceo"]
+    [
+      "Subject",
+      "Kashyap Makwana"
+    ],
+    [
+      "Role",
+      "Computer Engineering Student · AI Agent Dev"
+    ],
+    [
+      "Origin",
+      "India"
+    ],
+    [
+      "Education",
+      "Computer Engineering · SVKM's SBMP"
+    ],
+    [
+      "Status",
+      "Building + Learning + Shipping"
+    ],
+    [
+      "ToolChain",
+      "VS Code · Git · GitHub"
+    ],
+    [
+      "Core.Lang",
+      "JavaScript · Python"
+    ],
+    [
+      "Core.Frontend",
+      "React · Tailwind"
+    ],
+    [
+      "Core.Database",
+      "Firestore"
+    ],
+    [
+      "Core.AI",
+      "Gemini API · Anthropic API"
+    ],
+    [
+      "Core.Infra",
+      "Vercel · Render"
+    ],
+    [
+      "Grid.GitHub",
+      "Coderclash-ceo"
+    ],
+    [
+      "Grid.LinkedIn",
+      "/in/kashyap-makwana-ba26a7323"
+    ]
   ],
   "dev_signals": {
     "title": "Skill Radar",
-    "labels": ["Frontend", "TypeScript / JS", "AI Integration", "AI Agents", "Backend", "Deployment"],
-    "values": [75, 70, 68, 62, 60, 55]
+    "labels": [
+      "Frontend",
+      "JavaScript",
+      "AI Integration",
+      "AI Agents",
+      "Backend",
+      "Deployment"
+    ],
+    "values": [
+      75,
+      70,
+      68,
+      62,
+      60,
+      55
+    ]
   },
   "lang_signals": {
     "title": "Language & Stack",
-    "labels": ["JavaScript", "TypeScript", "Python", "HTML / CSS", "Java"],
-    "values": [72, 65, 62, 80, 50, 45]
+    "labels": [
+      "JavaScript",
+      "Python",
+      "HTML / CSS",
+      "Java",
+      "SQL / NoSQL"
+    ],
+    "values": [
+      72,
+      62,
+      80,
+      50,
+      45
+    ]
+  },
+  "photo": {
+    "zoom": 2.0,
+    "center_x": 0.64,
+    "center_y": 0.44,
+    "gamma": 1.0,
+    "invert": "auto"
   }
 }

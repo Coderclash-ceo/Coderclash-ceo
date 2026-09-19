@@ -14,6 +14,7 @@
 
 <a href="https://github.com/Coderclash-ceo"><img src="https://img.shields.io/badge/GITHUB-Coderclash--ceo-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
 <a href="https://github.com/Coderclash-ceo?tab=repositories"><img src="https://img.shields.io/badge/PROJECTS-0d1117?style=for-the-badge&logo=githubactions&logoColor=AA9BEF" alt="Projects"></a>
+<a href="https://www.linkedin.com/in/kashyap-makwana-ba26a7323"><img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 
 <br><br>
 
@@ -25,12 +26,12 @@
 
 ## This is me :)
 
-Hi, I'm **Kashyap**, a Computer Engineering student who builds **AI-powered products** end to end: React frontends, FastAPI/Node backends, and LLM agents that actually do things.
+Hi, I'm **Kashyap**, a Computer Engineering student who builds **AI-powered products** end to end: React frontends, APIs, and LLM agents that actually do things.
 
 - 🥗 Built **NutriLink**, an AI nutrition & health assistant, deployed live on Vercel + Render
 - 🤖 **Agent Developer** on **NudgeOS**, a multi-agent AI receptionist for WhatsApp/Instagram
 - 🗓️ Designing a **Smart Appointment Queue Management System** with a weighted priority queue
-- ⚛️ Daily driver: **React + TypeScript + Tailwind**, with **Gemini** and **Firestore** on the AI side
+- ⚛️ Daily driver: **React + Tailwind**, with **Gemini** and **Firestore** on the AI side
 - 🌱 Learning by shipping: every project goes live, not just to `localhost`
 
 ---
@@ -47,27 +48,27 @@ Hi, I'm **Kashyap**, a Computer Engineering student who builds **AI-powered prod
 
 ## projects
 
-### 🥗 NutriLink — AI Nutrition & Health Assistant 
+### 🥗 NutriLink — AI Nutrition & Health Assistant
 
 An AI-powered nutrition and health assistant with **food analysis, personalized coaching, and chat/voice interaction**.
 
-- **Stack:** React · TypeScript · Tailwind · FastAPI · Google Gemini API · Firestore
+- **Stack:** React · Tailwind · Google Gemini API · Firestore
 - Accurate food-analysis outputs across multiple tested food items, with **API response times under 15 seconds**
 - **Deployed independently:** frontend on Vercel, backend live on Render
 
- [Live demo](https://nutri-link-2-0.vercel.app/)
+[Live demo](https://nutri-link-2-0.vercel.app/)
 
 ### 🧠 NudgeOS — AI Receptionist for WhatsApp & Instagram
 
 Capstone team project: a SaaS platform built around **five coordinated AI agents**. I'm the **Agent Developer**, owning the agent layer and the shared LLM service.
 
-- **Stack:** JavaScript · Node · Firestore · Gemini Api
+- **Stack:** JavaScript · Firestore · Gemini API
 
 ### 🗓️ Smart Appointment Queue Management System `In progress`
 
 Full-stack platform where customers book appointments or join a digital queue, and providers manage counters and live queue status from an admin dashboard.
 
-- **Stack:** Node.js · Express · Firestore · HTML/CSS/JS
+- **Stack:** Firestore · HTML/CSS/JS
 - Unified **weighted priority queue** (walk-ins + appointments) with **aging** so nobody waits forever
 
 ---
