@@ -31,7 +31,7 @@ Hi, I'm **Kashyap**, a Computer Engineering student who builds **AI-powered prod
 - 🥗 Built **NutriLink**, an AI nutrition & health assistant, deployed live on Vercel + Render
 - 🤖 **Agent Developer** on **NudgeOS**, a multi-agent AI receptionist for WhatsApp/Instagram
 - 🗓️ Designing a **Smart Appointment Queue Management System** with a weighted priority queue
-- ⚛️ Daily driver: **React + Tailwind**, with **Gemini** and **Firestore** on the AI side
+- ⚛️ Daily driver: **React + CSS**, with **Gemini** and **Firestore** on the AI side
 - 🌱 Learning by shipping: every project goes live, not just to `localhost`
 
 ---
